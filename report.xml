@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+	<testsuite tests="0" failures="0" time="0.044" name="gitlab.corp.redhat.com/it-pnt/rhsm/rhsm-api/pkg/candlepin">
+		<properties>
+			<property name="go.version" value="go1.10.3"></property>
+			<property name="coverage.statements.pct" value="35.9"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.123" name="gitlab.corp.redhat.com/it-pnt/rhsm/rhsm-api/pkg/candlepin/consumer">
+		<properties>
+			<property name="go.version" value="go1.10.3"></property>
+			<property name="coverage.statements.pct" value="71.2"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.070" name="gitlab.corp.redhat.com/it-pnt/rhsm/rhsm-api/pkg/errata">
+		<properties>
+			<property name="go.version" value="go1.10.3"></property>
+			<property name="coverage.statements.pct" value="75.8"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.125" name="gitlab.corp.redhat.com/it-pnt/rhsm/rhsm-api/pkg/helpers">
+		<properties>
+			<property name="go.version" value="go1.10.3"></property>
+			<property name="coverage.statements.pct" value="50.7"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.119" name="gitlab.corp.redhat.com/it-pnt/rhsm/rhsm-api/pkg/pinhead">
+		<properties>
+			<property name="go.version" value="go1.10.3"></property>
+			<property name="coverage.statements.pct" value="70.0"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.018" name="gitlab.corp.redhat.com/it-pnt/rhsm/rhsm-api/pkg/rest/v1">
+		<properties>
+			<property name="go.version" value="go1.10.3"></property>
+			<property name="coverage.statements.pct" value="76.9"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.149" name="gitlab.corp.redhat.com/it-pnt/rhsm/rhsm-api/pkg/rest/v1/errata">
+		<properties>
+			<property name="go.version" value="go1.10.3"></property>
+			<property name="coverage.statements.pct" value="65.2"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.109" name="gitlab.corp.redhat.com/it-pnt/rhsm/rhsm-api/pkg/rest/v1/subscription">
+		<properties>
+			<property name="go.version" value="go1.10.3"></property>
+			<property name="coverage.statements.pct" value="66.5"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="1" failures="1" time="0.214" name="gitlab.corp.redhat.com/it-pnt/rhsm/rhsm-api/pkg/rest/v1/system">
+		<properties>
+			<property name="go.version" value="go1.10.3"></property>
+			<property name="coverage.statements.pct" value="61.1"></property>
+		</properties>
+		<testcase classname="system" name="Failure" time="0.000">
+			<failure message="Failed" type="">time=&#34;2018-07-11T15:18:31Z&#34; level=error msg=&#34;GetJWTInfo: Unauthorized&#34; api_client= method=GET path=/systems sessionID=4&#xA;time=&#34;2018-07-11T15:18:31Z&#34; level=error msg=&#34;GetJWTInfo: Unauthorized&#34; api_client= method=GET path=/systems/9vc7zkcjyjlwc2l sessionID=8</failure>
+		</testcase>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.033" name="gitlab.corp.redhat.com/it-pnt/rhsm/rhsm-api/pkg/servicejava/product">
+		<properties>
+			<property name="go.version" value="go1.10.3"></property>
+			<property name="coverage.statements.pct" value="62.3"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.037" name="gitlab.corp.redhat.com/it-pnt/rhsm/rhsm-api/pkg/servicejava/subscription">
+		<properties>
+			<property name="go.version" value="go1.10.3"></property>
+			<property name="coverage.statements.pct" value="69.2"></property>
+		</properties>
+	</testsuite>
+	<testsuite tests="0" failures="0" time="0.058" name="gitlab.corp.redhat.com/it-pnt/rhsm/rhsm-api/pkg/servicejava/user">
+		<properties>
+			<property name="go.version" value="go1.10.3"></property>
+			<property name="coverage.statements.pct" value="66.7"></property>
+		</properties>
+	</testsuite>
+</testsuites>
