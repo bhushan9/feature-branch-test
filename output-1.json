@@ -1,0 +1,161 @@
+[
+    {
+        "uri": "../../../features/errata/get_errata_details.feature",
+        "id": "get-errata-details",
+        "keyword": "Feature",
+        "name": "Get Errata Details",
+        "description": "    As a Red Hat Subscription Management user\n    I can view the details of an erratum via API\n    So that I do not have to spend time clicking around the portal\n    Erratum by erratum\n    To gather the information that is useful to me",
+        "line": 2,
+        "comments": [
+            {
+                "value": "# file: $GOPATH/src/gitlab.corp.redhat.com/it-pnt/rhsm-automation/rhsm-api/features/get_errata_details.feature",
+                "line": 1
+            }
+        ],
+        "elements": [
+            {
+                "id": "get-errata-details;get-errata-details",
+                "keyword": "Scenario",
+                "name": "Get Errata Details",
+                "description": "",
+                "line": 9,
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am an authenticated user",
+                        "line": 10,
+                        "match": {
+                            "location": "util.go:65"
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 6701552197
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I send a \"GET\" request to \"/errata/RHSA-2016:0619\"",
+                        "line": 11,
+                        "match": {
+                            "location": "util.go:23"
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 701920273
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "the response code should be 200",
+                        "line": 12,
+                        "match": {
+                            "location": "util.go:29"
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 201781
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "the Expected Errata Details are:",
+                        "line": 13,
+                        "doc_string": {
+                            "value": "{\n    \"id\": \"RHSA-2016:0619\",\n    \"copyrightYear\": \"2016\",\n    \"cves\": \" CVE-2015-5370 CVE-2016-2115 CVE-2016-2112 CVE-2016-2118 CVE-2016-2111 CVE-2016-2110\",\n    \"description\": \"Samba is an open-source implementation of the Server Message Block (SMB)\\nprotocol and the related Common Internet File System (CIFS) protocol, which\\nallow PC-compatible machines to share files, printers, and various information.\\n\\nSecurity Fix(es):\\n\\n* Multiple flaws were found in Samba's DCE/RPC protocol implementation. A\\nremote, authenticated attacker could use these flaws to cause a denial of\\nservice against the Samba server (high CPU load or a crash) or, possibly,\\nexecute arbitrary code with the permissions of the user running Samba (root).\\nThis flaw could also be used to downgrade a secure DCE/RPC connection by a\\nman-in-the-middle attacker taking control of an Active Directory (AD) object and\\ncompromising the security of a Samba Active Directory Domain Controller (DC).\\n(CVE-2015-5370)\\n\\nNote: While Samba packages as shipped in Red Hat Enterprise Linux do not support\\nrunning Samba as an AD DC, this flaw applies to all roles Samba implements.\\n\\n* A protocol flaw, publicly referred to as Badlock, was found in the Security\\nAccount Manager Remote Protocol (MS-SAMR) and the Local Security Authority\\n(Domain Policy) Remote Protocol (MS-LSAD). Any authenticated DCE/RPC connection\\nthat a client initiates against a server could be used by a man-in-the-middle\\nattacker to impersonate the authenticated user against the SAMR or LSA service\\non the server. As a result, the attacker would be able to get read/write access\\nto the Security Account Manager database, and use this to reveal all passwords\\nor any other potentially sensitive information in that database. (CVE-2016-2118)\\n\\n* Several flaws were found in Samba's implementation of NTLMSSP authentication.\\nAn unauthenticated, man-in-the-middle attacker could use this flaw to clear the\\nencryption and integrity flags of a connection, causing data to be transmitted\\nin plain text. The attacker could also force the client or server into sending\\ndata in plain text even if encryption was explicitly requested for that\\nconnection. (CVE-2016-2110)\\n\\n* It was discovered that Samba configured as a Domain Controller would establish\\na secure communication channel with a machine using a spoofed computer name. A\\nremote attacker able to observe network traffic could use this flaw to obtain\\nsession-related information about the spoofed machine. (CVE-2016-2111)\\n\\n* It was found that Samba's LDAP implementation did not enforce integrity\\nprotection for LDAP connections. A man-in-the-middle attacker could use this\\nflaw to downgrade LDAP connections to use no integrity protection, allowing them\\nto hijack such connections. (CVE-2016-2112)\\n\\n* It was found that Samba did not enable integrity protection for IPC traffic by\\ndefault. A man-in-the-middle attacker could use this flaw to view and modify the\\ndata sent between a Samba server and a client. (CVE-2016-2115)\\n\\nRed Hat would like to thank the Samba project for reporting these issues.\\nUpstream acknowledges Jouni Knuutinen (Synopsis) as the original reporter of\\nCVE-2015-5370; and Stefan Metzmacher (SerNet) as the original reporter of\\nCVE-2016-2118, CVE-2016-2110, CVE-2016-2112, and CVE-2016-2115.\\n\",\n    \"issued\": \"2016-04-12T00:00:00.000Z\",\n    \"lastUpdated\": \"2016-09-03T22:18:36.000Z\",\n    \"severity\": \"Critical\",\n    \"summary\": \"An update for samba is now available for Red Hat Enterprise Linux 6.2 Advanced\\nUpdate Support, Red Hat Enterprise Linux 6.4 Advanced Update Support, Red Hat\\nEnterprise Linux 6.5 Advanced Update Support, and Red Hat Enterprise Linux 6.6\\nExtended Update Support.\\n\\nRed Hat Product Security has rated this update as having a security impact of\\nCritical. A Common Vulnerability Scoring System (CVSS) base score, which gives a\\ndetailed severity rating, is available for each vulnerability from the CVE\\nlink(s) in the References section.\\n\",\n    \"synopsis\": \"Critical: samba security update\",\n    \"type\": \"security\",\n    \"typeSeverity\": \"Security Advisory (Critical)\",\n    \"solution\": \"For details on how to apply this update, which includes the changes described in\\nthis advisory, refer to:\\n\\nhttps://access.redhat.com/articles/11258\\n\\nAfter installing this update, the smb service will be restarted automatically.\\n\",\n    \"affectedProducts\": [\n        \"Red Hat Enterprise Linux EUS Compute Node\",\n        \"Red Hat Enterprise Linux Server - TUS\",\n        \"Red Hat Enterprise Linux for IBM z Systems - Extended Update Support\",\n        \"Red Hat Enterprise Linux for Power, big endian - Extended Update Support\",\n        \"Red Hat Enterprise Linux Server - Extended Update Support\",\n        \"Red Hat Enterprise Linux Server - AUS\",\n        \"Red Hat Enterprise Linux Server - Extended Update Support from RHUI\"\n    ],\n    \"bugzillas\": [\n    {\n        \"href\": \"https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=1309987\",\n        \"id\": \"1309987\",\n        \"title\": \"CVE-2015-5370 samba: crash in dcesrv_auth_bind_ack due to missing error check\",\n        \"type\": \"bugzilla\"\n    },\n    {\n        \"href\": \"https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=1311893\",\n        \"id\": \"1311893\",\n        \"title\": \"CVE-2016-2110 samba: Man-in-the-middle attacks possible with NTLMSSP authentication\",\n        \"type\": \"bugzilla\"\n    },\n    {\n        \"href\": \"https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=1311902\",\n        \"id\": \"1311902\",\n        \"title\": \"CVE-2016-2111 samba: Spoofing vulnerability when domain controller is configured\",\n        \"type\": \"bugzilla\"\n    },\n    {\n        \"href\": \"https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=1311903\",\n        \"id\": \"1311903\",\n        \"title\": \"CVE-2016-2112 samba: Missing downgrade detection\",\n        \"type\": \"bugzilla\"\n    },\n    {\n        \"href\": \"https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=1312084\",\n        \"id\": \"1312084\",\n        \"title\": \"CVE-2016-2115 samba: Smb signing not required by default when smb client connection is used for ipc usage\",\n        \"type\": \"bugzilla\"\n    },\n    {\n        \"href\": \"https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=1317990\",\n        \"id\": \"1317990\",\n        \"title\": \"CVE-2016-2118 samba: SAMR and LSA man in the middle attacks\",\n        \"type\": \"bugzilla\"\n    }\n    ],\n    \"references\": [\n    {\n        \"href\": \"https://rhn.redhat.com/errata/RHSA-2016-0619.html\",\n        \"title\": \"RHSA-2016:0619\",\n        \"type\": \"self\"\n    },\n    {\n        \"href\": \"https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=1309987\",\n        \"id\": \"1309987\",\n        \"title\": \"CVE-2015-5370 samba: crash in dcesrv_auth_bind_ack due to missing error check\",\n        \"type\": \"bugzilla\"\n    },\n    {\n        \"href\": \"https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=1311893\",\n        \"id\": \"1311893\",\n        \"title\": \"CVE-2016-2110 samba: Man-in-the-middle attacks possible with NTLMSSP authentication\",\n        \"type\": \"bugzilla\"\n    },\n    {\n        \"href\": \"https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=1311902\",\n        \"id\": \"1311902\",\n        \"title\": \"CVE-2016-2111 samba: Spoofing vulnerability when domain controller is configured\",\n        \"type\": \"bugzilla\"\n    },\n    {\n        \"href\": \"https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=1311903\",\n        \"id\": \"1311903\",\n        \"title\": \"CVE-2016-2112 samba: Missing downgrade detection\",\n        \"type\": \"bugzilla\"\n    },\n    {\n        \"href\": \"https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=1312084\",\n        \"id\": \"1312084\",\n        \"title\": \"CVE-2016-2115 samba: Smb signing not required by default when smb client connection is used for ipc usage\",\n        \"type\": \"bugzilla\"\n    },\n    {\n        \"href\": \"https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=1317990\",\n        \"id\": \"1317990\",\n        \"title\": \"CVE-2016-2118 samba: SAMR and LSA man in the middle attacks\",\n        \"type\": \"bugzilla\"\n    },\n    {\n        \"href\": \"https://www.redhat.com/security/data/cve/CVE-2015-5370.html\",\n        \"id\": \"CVE-2015-5370\",\n        \"title\": \"CVE-2015-5370\",\n        \"type\": \"cve\"\n    },\n    {\n        \"href\": \"https://www.redhat.com/security/data/cve/CVE-2016-2115.html\",\n        \"id\": \"CVE-2016-2115\",\n        \"title\": \"CVE-2016-2115\",\n        \"type\": \"cve\"\n    },\n    {\n        \"href\": \"https://www.redhat.com/security/data/cve/CVE-2016-2112.html\",\n        \"id\": \"CVE-2016-2112\",\n        \"title\": \"CVE-2016-2112\",\n        \"type\": \"cve\"\n    },\n    {\n        \"href\": \"https://www.redhat.com/security/data/cve/CVE-2016-2118.html\",\n        \"id\": \"CVE-2016-2118\",\n        \"title\": \"CVE-2016-2118\",\n        \"type\": \"cve\"\n    },\n    {\n        \"href\": \"https://www.redhat.com/security/data/cve/CVE-2016-2111.html\",\n        \"id\": \"CVE-2016-2111\",\n        \"title\": \"CVE-2016-2111\",\n        \"type\": \"cve\"\n    },\n    {\n        \"href\": \"https://www.redhat.com/security/data/cve/CVE-2016-2110.html\",\n        \"id\": \"CVE-2016-2110\",\n        \"title\": \"CVE-2016-2110\",\n        \"type\": \"cve\"\n    },\n    {\n        \"href\": \"https://access.redhat.com/security/updates/classification/#critical\",\n        \"type\": \"other\"\n    },\n    {\n        \"href\": \"https://access.redhat.com/security/vulnerabilities/badlock\",\n        \"type\": \"other\"\n    },\n    {\n        \"href\": \"https://access.redhat.com/articles/2253041\",\n        \"type\": \"other\"\n    },\n    {\n        \"href\": \"http://badlock.org/\",\n        \"type\": \"other\"\n    },\n    {\n        \"href\": \"https://access.redhat.com/articles/2243351\",\n        \"type\": \"other\"\n    }\n    ]\n}",
+                            "content_type": "",
+                            "line": 14
+                        },
+                        "match": {
+                            "location": "errata.go:18"
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 3981129
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "get-errata-details;get-errata-details-invalid-id",
+                "keyword": "Scenario",
+                "name": "Get Errata Details Invalid ID",
+                "description": "",
+                "line": 177,
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am an authenticated user",
+                        "line": 178,
+                        "match": {
+                            "location": "util.go:65"
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 6776675473
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I send a \"GET\" request to \"/errata/RHSA-9999-9999\"",
+                        "line": 179,
+                        "match": {
+                            "location": "util.go:23"
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 737210124
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "the response code should be 404",
+                        "line": 180,
+                        "match": {
+                            "location": "util.go:29"
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 94311
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "get-errata-details;get-errata-details-unauthd",
+                "keyword": "Scenario",
+                "name": "Get Errata Details Unauthd",
+                "description": "",
+                "line": 182,
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "When ",
+                        "name": "I send a \"GET\" request to \"/errata/RHSA-2016:0619\"",
+                        "line": 183,
+                        "match": {
+                            "location": "util.go:23"
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 453176524
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "the response code should be 401",
+                        "line": 184,
+                        "match": {
+                            "location": "util.go:29"
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 96422
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
